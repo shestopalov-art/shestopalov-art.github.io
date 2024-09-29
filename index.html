@@ -3,7 +3,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Сергей Константинович Шестопалов</title>
+    <title>Память о Сергее Константиновиче Шестопалове</title>
+    <meta name="description" content="Творческая платформа, посвящённая сохранению и популяризации наследия художника Сергея Шестопалова. Его картины, как цветы в саду, продолжают вдохновлять и напоминать о красоте природы и искусстве.">
+    <meta name="keywords" content="Сергей Шестопалов, искусство, живопись, цветы, наследие, память, Липецк">
     <link rel="icon" type="image/x-icon" href="/ui/favicon.ico">
 
     <link href="/ui/bootstrap.min.css" rel="stylesheet">
