@@ -5,9 +5,9 @@
     <div class="row align-items-center g-0 py-lg-5">
         <div class="col-lg-6 col-12 z-1">
             <h1 class="display-1 text-body-emphasis text-uppercase p-xxl-5">
-                <span class="d-block">Сергей</span>
-                <span class="d-block">Константинович</span>
-                <span class="d-block">Шестопалов</span>
+                <span class="d-md-block">Сергей</span>
+                <span class="d-md-block">Константинович</span>
+                <span class="d-md-block">Шестопалов</span>
             </h1>
         </div>
         <div class="col-12 col-sm-8 col-lg-6" style="background: #252628">
