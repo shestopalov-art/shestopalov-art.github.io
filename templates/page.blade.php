@@ -39,7 +39,7 @@
         <div class="d-flex align-items-center g-4 py-5 slide-track">
             @foreach($images->take(6) as $image)
                 <div class="slide">
-                    <img src="{{ $image }}" class="img-fluid p-5" alt="">
+                    <img src="{{ $image }}" class="img-fluid p-xxl-5 px-3" alt="">
                 </div>
             @endforeach
         </div>
@@ -71,7 +71,7 @@
         <div class="d-flex align-items-center g-4 py-5 slide-track">
             @foreach($images->skip(6)->take(6) as $image)
                 <div class="slide">
-                    <img src="{{ $image }}" class="img-fluid p-5" alt="">
+                    <img src="{{ $image }}" class="img-fluid p-xxl-5 px-3" alt="">
                 </div>
             @endforeach
         </div>
