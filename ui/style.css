@@ -25,15 +25,12 @@ p.h2 {
     0% {
         transform: translateX(0);
     }
-    100% {
-        transform: translateX(calc(-250px * 7));
+    50% {
+        transform: translateX(calc(-80%));
     }
-}
-
-.slide-track {
-    animation: scroll 40s linear infinite;
-    display: flex;
-    width: calc(25% * 14);
+    100% {
+        transform: translateX(0);
+    }
 }
 
 .slider {
@@ -65,9 +62,9 @@ p.h2 {
 }
 
 .slider .slide-track {
-    animation: scroll 40s linear infinite;
+    animation: scroll 180s linear infinite;
     display:   flex;
-    width:     3500px
+    width:     calc(25% * 8);
 }
 
 .slider .slide {
