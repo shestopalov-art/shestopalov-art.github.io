@@ -1,0 +1,17 @@
+{
+    "name": "tabuna/shestopalov",
+    "autoload": {
+        "psr-4": {
+            "Tabuna\\Shestopalov\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Alexandr Chernyaev",
+            "email": "bliz48rus@gmail.com"
+        }
+    ],
+    "require": {
+        "illuminate/view": "^11.0"
+    }
+}
