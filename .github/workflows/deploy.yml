@@ -28,7 +28,7 @@ jobs:
 
       - name: Generate
         run: |
-          php index.php > index.html  
+          php index.php > index.html
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@releases/v4
