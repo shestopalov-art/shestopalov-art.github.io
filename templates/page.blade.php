@@ -1,10 +1,15 @@
 @extends('layout')
 
 @section('body')
+
+<audio id="sonata" class="d-none">
+    <source src="/ui/sonata.mp3" type="audio/mpeg">
+</audio>
+
 <div class="container-xxl px-4 py-5">
-    <div class="row align-items-center g-0 py-lg-5">
-        <div class="col-lg-6 col-12 z-1">
-            <h1 class="display-1 text-body-emphasis text-uppercase p-xxl-5">
+    <div class="row g-0 py-lg-5">
+        <div class="col-lg-5 col-12 z-1 d-flex">
+            <h1 class="display-2 text-body-emphasis text-uppercase p-xxl-5 my-auto">
                 <span class="d-md-block">Сергей</span>
                 <span class="d-md-block">Константинович</span>
                 <span class="d-md-block">Шестопалов</span>
@@ -12,6 +17,22 @@
         </div>
         <div class="col-12 col-sm-8 col-lg-6" style="background: #252628">
             <img src="/ui/portrait.png" class="d-block mx-lg-auto w-100 portrait" alt="Сергей Константинович Шестопалов">
+        </div>
+
+        <div class="col-12 col-lg-1 d-flex">
+
+            <div class="d-flex mb-auto ms-4">
+            <button onclick="startAudio()" id="sonata-start" class="btn btn-outline-secondary rounded-0 border-2">
+                <svg width="37" height="30" viewBox="0 0 40 30" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M33.3125 1.0625C37.375 4.375 40 9.375 40 15C40 20.6875 37.375 25.6875 33.3125 29C32.6875 29.5 31.75 29.4375 31.1875 28.75C30.6875 28.125 30.8125 27.1875 31.4375 26.6875C34.8125 23.9375 37 19.75 37 15C37 10.3125 34.8125 6.125 31.4375 3.375C30.8125 2.875 30.6875 1.9375 31.1875 1.25C31.75 0.625 32.6875 0.5625 33.3125 1.0625ZM29.5625 5.6875C32.25 7.9375 34 11.25 34 15C34 18.8125 32.25 22.125 29.5625 24.3125C28.875 24.875 27.9375 24.75 27.4375 24.125C26.875 23.5 27 22.5625 27.625 22C29.6875 20.375 31 17.875 31 15C31 12.1875 29.6875 9.6875 27.625 8.0625C27 7.5 26.9375 6.5625 27.4375 5.9375C27.9375 5.3125 28.875 5.1875 29.5625 5.6875ZM25.75 10.375C27.125 11.5 28 13.125 28 15C28 16.9375 27.125 18.5625 25.75 19.6875C25.125 20.1875 24.1875 20.125 23.625 19.4375C23.125 18.8125 23.25 17.875 23.875 17.375C24.5625 16.8125 25 15.9375 25 15C25 14.0625 24.5625 13.25 23.875 12.6875C23.25 12.1875 23.125 11.25 23.625 10.5625C24.1875 9.9375 25.125 9.875 25.75 10.375ZM18.8125 1.1875C19.5 1.5 20 2.25 20 3V27C20 27.8125 19.5 28.5 18.8125 28.875C18.0625 29.1875 17.25 29.0625 16.625 28.5L8.1875 21H4C1.75 21 0 19.25 0 17V13C0 10.8125 1.75 9 4 9H8.1875L16.625 1.5625C17.25 1 18.0625 0.875 18.8125 1.1875Z"/>
+                </svg>
+            </button>
+            <button onclick="stopAudio()" id="sonata-stop" class="btn btn-outline-secondary rounded-0 border-2 d-none">
+                <svg width="37" height="30" viewBox="0 0 40 30" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18.8125 1.1875C19.5 1.5 20 2.25 20 3V27C20 27.8125 19.5 28.5 18.8125 28.875C18.0625 29.1875 17.25 29.0625 16.625 28.5L8.1875 21H4C1.75 21 0 19.25 0 17V13C0 10.8125 1.75 9 4 9H8.1875L16.625 1.5625C17.25 1 18.0625 0.875 18.8125 1.1875ZM26.5625 9.4375L30 12.875L33.4375 9.4375C34 8.875 34.9375 8.875 35.5 9.4375C36.125 10.0625 36.125 11 35.5 11.5625L32.0625 15L35.5 18.4375C36.125 19.0625 36.125 20 35.5 20.5625C34.9375 21.1875 34 21.1875 33.4375 20.5625L30 17.125L26.5625 20.5625C25.9375 21.1875 25 21.1875 24.4375 20.5625C23.8125 20 23.8125 19.0625 24.4375 18.4375L27.875 15L24.4375 11.5625C23.8125 11 23.8125 10.0625 24.4375 9.4375C25 8.875 25.9375 8.875 26.5625 9.4375Z"/>
+                </svg>
+            </button>
+            </div>
         </div>
     </div>
 </div>
@@ -103,10 +124,10 @@
 
 
 <div class="container-fluid">
-    <div class="row align-items-center g-3 py-5">
+    <div class="row g-3 py-5">
         @foreach($images as $image)
             <div class="col-12 col-md-6 col-lg-4">
-                <img src="{{ $image }}" class="w-100 h-100" alt="" loading="lazy">
+                <img src="{{ $image }}" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
         @endforeach
     </div>

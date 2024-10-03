@@ -18,5 +18,28 @@
 <body>
 
 @yield('body')
+
+<script>
+    // Функция для выключения звука
+    function startAudio() {
+        const audio = document.getElementById('sonata');
+        audio.play();
+
+        document.getElementById('sonata-start').classList.add('d-none');
+        document.getElementById('sonata-stop').classList.remove('d-none');
+    }
+
+    // Функция для полной остановки воспроизведения
+    function stopAudio() {
+        const audio = document.getElementById('sonata');
+        audio.pause(); // Останавливаем аудио
+        audio.currentTime = 0; // Возвращаемся в начало трека
+
+
+        document.getElementById('sonata-start').classList.remove('d-none');
+        document.getElementById('sonata-stop').classList.add('d-none');
+    }
+</script>
+
 </body>
 </html>
