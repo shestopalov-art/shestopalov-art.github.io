@@ -10,16 +10,26 @@
 
     <link href="/ui/bootstrap.min.css" rel="stylesheet">
     <link href="/ui/style.css" rel="stylesheet">
+    <link href="/ui/simpleLightbox.min.css" rel="stylesheet">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+
 </head>
 <body>
 
 @yield('body')
 
+
+<script src="/ui/simpleLightbox.min.js"></script>
+
 <script>
+    // using plain js
+    new SimpleLightbox({elements: '.gallery a'});
+
+
     // Функция для выключения звука
     function startAudio() {
         const audio = document.getElementById('sonata');

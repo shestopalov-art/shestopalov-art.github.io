@@ -11,6 +11,12 @@ p.h2 {
     text-wrap: balance;
 }
 
+@media only screen and (max-width: 600px) {
+    p.h2 {
+        padding: 0 1em;
+    }
+}
+
 .display-1 {
     line-height: 140%;
 }
@@ -104,4 +110,20 @@ p.h2 {
     --bs-btn-active-bg: #252628;
     --bs-btn-active-color: #fff;
     --bs-btn-active-border-color: #fff;
+}
+
+
+@media only screen and (max-width: 600px) {
+    .text-name {
+        font-size: 9vw;
+    }
+}
+
+.quote {
+    font-size: 14em;
+    left: -0.4em;
+    top: -0.4em;
+    color: #D7D9E2;
+    position: absolute;
+    opacity: 0.7;
 }
