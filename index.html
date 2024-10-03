@@ -17,10 +17,15 @@
 </head>
 <body>
 
+
+<audio id="sonata" class="d-none">
+    <source src="/ui/sonata.mp3" type="audio/mpeg">
+</audio>
+
 <div class="container-xxl px-4 py-5">
-    <div class="row align-items-center g-0 py-lg-5">
-        <div class="col-lg-6 col-12 z-1">
-            <h1 class="display-1 text-body-emphasis text-uppercase p-xxl-5">
+    <div class="row g-0 py-lg-5">
+        <div class="col-lg-5 col-12 z-1 d-flex">
+            <h1 class="display-2 text-body-emphasis text-uppercase p-xxl-5 my-auto">
                 <span class="d-md-block">Сергей</span>
                 <span class="d-md-block">Константинович</span>
                 <span class="d-md-block">Шестопалов</span>
@@ -28,6 +33,22 @@
         </div>
         <div class="col-12 col-sm-8 col-lg-6" style="background: #252628">
             <img src="/ui/portrait.png" class="d-block mx-lg-auto w-100 portrait" alt="Сергей Константинович Шестопалов">
+        </div>
+
+        <div class="col-12 col-lg-1 d-flex">
+
+            <div class="d-flex mb-auto ms-4">
+            <button onclick="startAudio()" id="sonata-start" class="btn btn-outline-secondary rounded-0 border-2">
+                <svg width="37" height="30" viewBox="0 0 40 30" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M33.3125 1.0625C37.375 4.375 40 9.375 40 15C40 20.6875 37.375 25.6875 33.3125 29C32.6875 29.5 31.75 29.4375 31.1875 28.75C30.6875 28.125 30.8125 27.1875 31.4375 26.6875C34.8125 23.9375 37 19.75 37 15C37 10.3125 34.8125 6.125 31.4375 3.375C30.8125 2.875 30.6875 1.9375 31.1875 1.25C31.75 0.625 32.6875 0.5625 33.3125 1.0625ZM29.5625 5.6875C32.25 7.9375 34 11.25 34 15C34 18.8125 32.25 22.125 29.5625 24.3125C28.875 24.875 27.9375 24.75 27.4375 24.125C26.875 23.5 27 22.5625 27.625 22C29.6875 20.375 31 17.875 31 15C31 12.1875 29.6875 9.6875 27.625 8.0625C27 7.5 26.9375 6.5625 27.4375 5.9375C27.9375 5.3125 28.875 5.1875 29.5625 5.6875ZM25.75 10.375C27.125 11.5 28 13.125 28 15C28 16.9375 27.125 18.5625 25.75 19.6875C25.125 20.1875 24.1875 20.125 23.625 19.4375C23.125 18.8125 23.25 17.875 23.875 17.375C24.5625 16.8125 25 15.9375 25 15C25 14.0625 24.5625 13.25 23.875 12.6875C23.25 12.1875 23.125 11.25 23.625 10.5625C24.1875 9.9375 25.125 9.875 25.75 10.375ZM18.8125 1.1875C19.5 1.5 20 2.25 20 3V27C20 27.8125 19.5 28.5 18.8125 28.875C18.0625 29.1875 17.25 29.0625 16.625 28.5L8.1875 21H4C1.75 21 0 19.25 0 17V13C0 10.8125 1.75 9 4 9H8.1875L16.625 1.5625C17.25 1 18.0625 0.875 18.8125 1.1875Z"/>
+                </svg>
+            </button>
+            <button onclick="stopAudio()" id="sonata-stop" class="btn btn-outline-secondary rounded-0 border-2 d-none">
+                <svg width="37" height="30" viewBox="0 0 40 30" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18.8125 1.1875C19.5 1.5 20 2.25 20 3V27C20 27.8125 19.5 28.5 18.8125 28.875C18.0625 29.1875 17.25 29.0625 16.625 28.5L8.1875 21H4C1.75 21 0 19.25 0 17V13C0 10.8125 1.75 9 4 9H8.1875L16.625 1.5625C17.25 1 18.0625 0.875 18.8125 1.1875ZM26.5625 9.4375L30 12.875L33.4375 9.4375C34 8.875 34.9375 8.875 35.5 9.4375C36.125 10.0625 36.125 11 35.5 11.5625L32.0625 15L35.5 18.4375C36.125 19.0625 36.125 20 35.5 20.5625C34.9375 21.1875 34 21.1875 33.4375 20.5625L30 17.125L26.5625 20.5625C25.9375 21.1875 25 21.1875 24.4375 20.5625C23.8125 20 23.8125 19.0625 24.4375 18.4375L27.875 15L24.4375 11.5625C23.8125 11 23.8125 10.0625 24.4375 9.4375C25 8.875 25.9375 8.875 26.5625 9.4375Z"/>
+                </svg>
+            </button>
+            </div>
         </div>
     </div>
 </div>
@@ -145,536 +166,559 @@
 
 
 <div class="container-fluid">
-    <div class="row align-items-center g-3 py-5">
+    <div class="row g-3 py-5">
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA4839.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA4839.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA4840.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA4840.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA4841.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA4841.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA4842.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA4842.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA4843.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA4843.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA4844.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA4844.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA4845.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA4845.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA4846.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA4846.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA4847.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA4847.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA4848.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA4848.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA4849.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA4849.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA4850.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA4850.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA4851.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA4851.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA4852.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA4852.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA4853.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA4853.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA4854.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA4854.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA4855.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA4855.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA4856.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA4856.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA4857.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA4857.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA4858.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA4858.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA4859.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA4859.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA4860.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA4860.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA4861.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA4861.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5581.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5581.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5582.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5582.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5584.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5584.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5585.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5585.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5586.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5586.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5587.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5587.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5588.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5588.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5589.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5589.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5590.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5590.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5591.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5591.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5592.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5592.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5593.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5593.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5594.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5594.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5595.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5595.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5596.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5596.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5597.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5597.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5598.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5598.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5599.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5599.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5600.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5600.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5601.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5601.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5602.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5602.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5603.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5603.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5604.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5604.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5605.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5605.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5606.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5606.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5607.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5607.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5608.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5608.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5609.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5609.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5610.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5610.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5611.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5611.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5612.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5612.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5613.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5613.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5614.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5614.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5615.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5615.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5616.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5616.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5617.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5617.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5618.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5618.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5619.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5619.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5620.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5620.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5621.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5621.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5622.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5622.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5623.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5623.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5624.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5624.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5625.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5625.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5626.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5626.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5627.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5627.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5628.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5628.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5629.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5629.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5630.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5630.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5631.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5631.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5632.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5632.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5633.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5633.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5634.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5634.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5635.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5635.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5636.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5636.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5637.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5637.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5638.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5638.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5683.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5683.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5684.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5684.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5685.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5685.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5686.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5686.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5687.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5687.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5688.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5688.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5690.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5690.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5691.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5691.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5692.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5692.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5693.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5693.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5694.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5694.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5695.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5695.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5696.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5696.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5697.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5697.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5698.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5698.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5699.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5699.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5700.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5700.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5701.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5701.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5702.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5702.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5703.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5703.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5704.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5704.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5705.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5705.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5706.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5706.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5707.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5707.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5708.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5708.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5710.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5710.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5711.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5711.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5713.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5713.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5714.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5714.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5715.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5715.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5716.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5716.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5717.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5717.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5718.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5718.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5719.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5719.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5720.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5720.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5721.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5721.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5722.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5722.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5723.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5723.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5724.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5724.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5725.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5725.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5726.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5726.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5728.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5728.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5729.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5729.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5731.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5731.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5732.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5732.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5733.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5733.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5734.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5734.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5735.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5735.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5736.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5736.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5737.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5737.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5738.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5738.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5739.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5739.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5740.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5740.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5741.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5741.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5742.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5742.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5743.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5743.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5744.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5744.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5745.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5745.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5746.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5746.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5747.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5747.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5748.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5748.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5749.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5749.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5750.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5750.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5751.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5751.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5752.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5752.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5753.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5753.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5754.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5754.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5755.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5755.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5756.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5756.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5757.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5757.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5758.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5758.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5759.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5759.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5761.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5761.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5766.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5766.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5767.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5767.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5768.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5768.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5994.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5994.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5995.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5995.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5996.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5996.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5997.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5997.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5998.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5998.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA5999.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA5999.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA6000.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA6000.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA6001.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA6001.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA6002.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA6002.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA6003.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA6003.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA6004.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA6004.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA6005.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA6005.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA6006.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA6006.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA6007.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA6007.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA6008.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA6008.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA6009.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA6009.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA6010.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA6010.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA6011.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA6011.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA6012.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA6012.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
                     <div class="col-12 col-md-6 col-lg-4">
-                <img src="/images/IMGA6013.JPG" class="w-100 h-100" alt="" loading="lazy">
+                <img src="/images/IMGA6013.JPG" class="w-100 h-100 cover" alt="" loading="lazy">
             </div>
             </div>
 </div>
+
+<script>
+    // Функция для выключения звука
+    function startAudio() {
+        const audio = document.getElementById('sonata');
+        audio.play();
+
+        document.getElementById('sonata-start').classList.add('d-none');
+        document.getElementById('sonata-stop').classList.remove('d-none');
+    }
+
+    // Функция для полной остановки воспроизведения
+    function stopAudio() {
+        const audio = document.getElementById('sonata');
+        audio.pause(); // Останавливаем аудио
+        audio.currentTime = 0; // Возвращаемся в начало трека
+
+
+        document.getElementById('sonata-start').classList.remove('d-none');
+        document.getElementById('sonata-stop').classList.add('d-none');
+    }
+</script>
+
 </body>
 </html>

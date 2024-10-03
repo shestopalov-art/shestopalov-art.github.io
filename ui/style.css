@@ -89,3 +89,19 @@ p.h2 {
     object-fit: cover;
     object-position: bottom;
 }
+
+.cover {
+    object-fit: cover;
+}
+
+.btn-outline-secondary {
+    aspect-ratio: 1/1;
+    --bs-btn-color: #D7D9E2;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: inherit;
+    --bs-btn-hover-border-color: #fff;
+
+    --bs-btn-active-bg: #252628;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-border-color: #fff;
+}
