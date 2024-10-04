@@ -23,7 +23,7 @@ p.h2 {
 
 .gallery img {
     object-fit: cover;
-    aspect-ratio: 3 / 4;
+    aspect-ratio: 1/1;
 }
 
 
