@@ -140,7 +140,7 @@
 <div class="container-fluid">
     <div class="row g-3 py-5">
         @foreach($images as $image)
-            <div class="col-12 col-md-6 col-lg-4 gallery">
+            <div class="col-4 gallery">
                 <a href="{{ $image }}" target="_blank">
                     <img src="{{ $image }}" class="w-100 h-100 cover" alt="" loading="lazy">
                 </a>
